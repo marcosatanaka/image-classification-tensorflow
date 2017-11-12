@@ -117,7 +117,7 @@ Para sair do Python e do console do container, `ctrl + d` duas vezes.
 Mapear diretório entre a máquina física e o container:
 
 ```
-docker run -it --volume ${HOME}/tf_files:/tf_files —workdir /tf_files --publish 6006:6006 tensorflow/tensorflow:1.1.0 bash
+docker run -it --volume ${HOME}/tf_files:/tf_files --workdir /tf_files --publish 6006:6006 tensorflow/tensorflow:1.1.0 bash
 ```
 
 Com este comando criamos na pasta `${HOME}` da máquina física uma pasta chamada `tf_files`, e no docker também. Tudo que colocarmos nesta pasta, estará acessível no container.
@@ -139,15 +139,15 @@ Colocar neste diretório os arquivos necessários para treinar a CNN:
 Iniciar o treinamento:
 
 ```
-python -m tf_files/retrain \
-  --bottleneck_dir=tf_files/bottlenecks \
+python -m retrain \
+  --bottleneck_dir=bottlenecks \
   --how_many_training_steps=500 \
-  --model_dir=tf_files/models/ \
-  --summaries_dir=tf_files/training_summaries/"${ARCHITECTURE}" \
-  --output_graph=tf_files/retrained_graph.pb \
-  --output_labels=tf_files/retrained_labels.txt \
+  --model_dir=models/ \
+  --summaries_dir=training_summaries/"${ARCHITECTURE}" \
+  --output_graph=retrained_graph.pb \
+  --output_labels=retrained_labels.txt \
   --architecture="${ARCHITECTURE}" \
-  --image_dir=tf_files/cats
+  --image_dir=cats
 ```
 
 Este script irá baixar o inception model e depois iniciará o treinamento com base nas imagens e categorias que informamos. Irá iretar 500 vezes para treinar o modelo, e salvará o resultado no arquivo `retrained_graph.pb`.
