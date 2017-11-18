@@ -32,6 +32,16 @@ Ao juntar muitos perceptrons, formamos uma rede, uma rede neural artificial.
 
 Para treinar um perceptron, comparamos o resultado obtido com o resultado esperado, e mudamos os pesos das entradas com o objetivo de minimizar o erro obtido.
 
+Por exemplo: imagine que vamos treinar uma rede neural para classificar se um e-mail é ou não spam. As entradas podem ser:
+
+* O tamanho do e-mail
+* O horário em que foi enviado
+* Se conheço ou não quem o enviou
+* Se já recebi outros e-mails do mesmo remetente
+* As palavras no assunto e no corpo do e-mail
+
+E a saída é 0 (não spam) ou 1 (spam). Conforme a rede é treinada (usa a diferença entre o resultado obtido e o resultado esperado para alterar os pesos que agem sobre as entradas, afim de minimizar o erro), ela aprende as características e a relevância de cada característica para indicar se um e-mail é ou não spam.
+
 **Deep Learning** é o uso de uma rede neural com muitas camadas.
 
 ### Convolucional
@@ -170,7 +180,7 @@ Para iOS temos também a alternativa de converter este modelo TensorFlow para um
 
 ## Fontes e créditos
 
-Este tutorial não seria possível sem as informações das páginas:
+Este tutorial não seria possível sem o estudo das seguintes referências:
 
 * **Siraj Raval:** [Convolutional Network](https://github.com/llSourcell/Convolutional_neural_network)
 * **Siraj Raval:** [Convolutional Neural Networks - The Math of Intelligence (Week 4)](https://youtu.be/FTr3n7uBIuE)
@@ -178,6 +188,7 @@ Este tutorial não seria possível sem as informações das páginas:
 * **Google Codelabs:** [TensorFlow for Poets](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/)
 * **Abhineet Saxena:** [Convolutional Neural Networks (CNNs): An Illustrated Explanation](http://xrds.acm.org/blog/2016/06/convolutional-neural-networks-cnns-illustrated-explanation/)
 * **Udacity:** [Neural Networks](http://video.udacity-data.com.s3.amazonaws.com/topher/2017/November/5a01aef2_neural-networks/neural-networks.pdf)
+* **Guilherme Silveira:** [Machine Learning: Introdução à classificação](https://www.casadocodigo.com.br/products/livro-machine-learning)
 
 ### Imagens
 
