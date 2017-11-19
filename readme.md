@@ -110,21 +110,13 @@ Uma vez instalado, podemos executar o seguinte comando para conferir se está tu
 
 ### Passo 2
 
-Criar um novo container baseado na imagem base do TensorFlow:
+Baixar a imagem do TensorFlow:
 
-`docker run -it tensorflow/tensorflow:1.1.0 bash`
-
-`bash` fará com que fiquemos no shell do container que iniciamos.
-
-Podemos verificar se o Python foi instalado corretamente:
-
-`python`
-
-Para sair do Python e do console do container, `ctrl + d` duas vezes.
+`docker pull tensorflow/tensorflow:1.1.0`
 
 ### Passo 3
 
-Mapear diretório entre a máquina física e o container:
+Iniciar o container baseado na imagem do TensorFlow, mapeando um diretório entre a máquina física e o container:
 
 ```
 docker run -it --volume ${HOME}/tf_files:/tf_files --workdir /tf_files --publish 6006:6006 tensorflow/tensorflow:1.1.0 bash
