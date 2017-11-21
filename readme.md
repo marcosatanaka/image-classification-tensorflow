@@ -122,7 +122,10 @@ Iniciar o container baseado na imagem do TensorFlow, mapeando um diretório entr
 docker run -it --volume ${HOME}/tf_files:/tf_files --workdir /tf_files --publish 6006:6006 tensorflow/tensorflow:1.1.0 bash
 ```
 
-Com este comando criamos na pasta `${HOME}` da máquina física uma pasta chamada `tf_files`, e no docker também. Tudo que colocarmos nesta pasta, estará acessível no container.
+* [`-it`](https://docs.docker.com/engine/reference/run/#foreground): processo interativo
+* [`--volume <host>:<container>`](https://docs.docker.com/engine/reference/run/#volume-shared-filesystems): monta um volume, linkando uma pasta no host com uma no container
+* [`--workdir <dir>`](https://docs.docker.com/engine/reference/run/#workdir): diretório no container onde vamos executar os comandos
+* [`--publish <host>:<container>`](https://docs.docker.com/engine/reference/run/#network-settings): mapeamento entre porta do host e a porta no container
 
 ### Passo 4
 
